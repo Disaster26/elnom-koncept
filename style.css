@@ -285,3 +285,20 @@ textarea{min-height:120px;resize:vertical}
 @media (max-width:600px){.ind-list{grid-template-columns:1fr}}
 .rail{scroll-padding-inline:var(--pad)}
 @media (min-width:961px){.rail{scroll-padding-inline:0}}
+/* 12.11 poprawka usera: na telefonie przycisk dotykal naglowka (lead znikal na niskich ekranach) - hero w normalnym przeplywie, zawsze odstepy */
+@media (max-width:960px){
+  .hero:not(.hero--ind){height:auto;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:min(40svh,340px)}
+  .hero:not(.hero--ind) .hero-txt{position:relative;left:auto;right:auto;top:auto;bottom:auto!important;max-width:640px;padding:0 var(--pad);margin:0 0 32px}
+  .hero:not(.hero--ind) .lead{display:block!important;margin:18px 0 28px!important}
+  .hero:not(.hero--ind) .paths{position:relative}
+  .hero:not(.hero--ind) .hero-txt:before,.hero:not(.hero--ind) .hero-txt:after{display:none}
+}
+@media (max-width:960px){
+  .hero:not(.hero--ind) picture img{height:calc(min(40svh,340px) + 70px);object-position:50% 40%}
+  .hero:not(.hero--ind):after{background:linear-gradient(180deg,rgba(0,15,41,.45) 0,rgba(0,15,41,0) 70px,rgba(0,15,41,0) calc(min(40svh,340px) - 30px),var(--navy) calc(min(40svh,340px) + 60px),var(--navy) 100%)}
+}
+@media (max-width:960px){
+  .hero--ind{height:auto;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end}
+  .hero--ind .hero-txt{position:relative;left:auto;right:auto;top:auto;bottom:auto!important;padding:120px var(--pad) 0;margin:0 0 40px}
+  .hero--ind .lead{display:block!important;margin:18px 0 28px!important}
+}
